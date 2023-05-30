@@ -44,8 +44,8 @@ public class RESTController {
         DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd:hh:mm:ss");
         String currentDateTime = dateFormatter.format(new Date());
 
-        String headerKey = "Content-Disposition";
-        String headerValue = "attachement; filename=pdf_" + currentDateTime + ".pdf";
+
+        String headerValue =  currentDateTime + ".pdf";
 
 //        FileOutputStream io = new FileOutputStream(headerValue);
         boolean success = this.pdfGeneratorService.exportPdf(this.invoice,headerValue);
